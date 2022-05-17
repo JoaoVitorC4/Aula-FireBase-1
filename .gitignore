@@ -30,3 +30,8 @@ npm-debug.log*
 /platforms
 /plugins
 /www
+<<<<<<< HEAD
+=======
+
+src/environments/environment.ts
+>>>>>>> ad724a1a80b9eb9f71b015f5361be0e36732a10f

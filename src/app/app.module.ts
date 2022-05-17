@@ -9,7 +9,10 @@ import { IonicModule, IonicRouteStrategy } from '@ionic/angular';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { environment } from 'src/environments/environment';
+<<<<<<< HEAD
 import { FormsModule } from '@angular/forms';
+=======
+>>>>>>> ad724a1a80b9eb9f71b015f5361be0e36732a10f
 
 @NgModule({
   declarations: [AppComponent],
@@ -18,7 +21,10 @@ import { FormsModule } from '@angular/forms';
     BrowserModule,
     IonicModule.forRoot(),
     AppRoutingModule,
+<<<<<<< HEAD
     FormsModule,
+=======
+>>>>>>> ad724a1a80b9eb9f71b015f5361be0e36732a10f
     AngularFireModule.initializeApp(environment.firebaseConfig),
     AngularFireDatabaseModule,
   ],
