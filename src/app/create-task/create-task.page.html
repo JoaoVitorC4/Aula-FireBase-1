@@ -5,18 +5,20 @@
 </ion-header>
 
 <ion-content>
-<form[formGroup] action="">
-<ion-item>
-  <ion-label position="floating">Title</ion-label>
-  <ion-input required></ion-input>
-</ion-item>
+<form [formGroup]="formulario">
+  <ion-item>
+    <ion-label position="floating">Title</ion-label>
+    <ion-input formControlName="title" required></ion-input>
+  </ion-item>
 
-<ion-item>
-  <ion-label position="floating">Description</ion-label>
-  <ion-input required></ion-input>
-</ion-item>
+  <ion-item>
+    <ion-label position="floating">Description</ion-label>
+    <ion-input formControlName="description" type="text" required></ion-input>
+  </ion-item>
 
-<ion-button type="submit" [disabled]="formulario.invad" color="submit" expand="block"></ion-button>
+{{formulario.invad}}
+
+<ion-button type="submit" (click)="salvarTask()" [disabled]="formulario.invad" color="success" expand="block">Salvar</ion-button>
 
 </form>
 </ion-content>

@@ -1,8 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-<<<<<<< HEAD
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-=======
->>>>>>> ad724a1a80b9eb9f71b015f5361be0e36732a10f
+import { ToastButton, ToastController } from '@ionic/angular';
+import { TaskService } from '../task.service';
 
 @Component({
   selector: 'app-create-task',
@@ -10,23 +9,33 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
   styleUrls: ['./create-task.page.scss'],
 })
 export class CreateTaskPage implements OnInit {
-<<<<<<< HEAD
   formulario: FormGroup
   constructor(
-    private FormBuilder: FormBuilder
+    private firebaseservice: TaskService,
+    private FormBuilder: FormBuilder,
+    private toastController: ToastController
   ) { }
 
-  ngOnInit() {7
+  ngOnInit() {
     this.formulario = this.FormBuilder.group({
       title:['',Validators.required],
       description:['',Validators.required]
     })
-=======
+  }
 
-  constructor() { }
+  salvarTask(){
+    this.firebaseservice.create(this.formulario.value).then(() => {
+    this.mostraToast("Itens Salvo com Sucesso!");
+    this.formulario.reset();
+    })
+  }
 
-  ngOnInit() {
->>>>>>> ad724a1a80b9eb9f71b015f5361be0e36732a10f
+  async mostraToast(mensagem){
+    const toast = await this.toastController.create({
+      message: mensagem,
+      duration: 3000
+    });
+    await toast.present();
   }
 
 }
